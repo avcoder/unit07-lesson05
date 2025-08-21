@@ -132,6 +132,25 @@ transition: slide-left
 transition: slide-left
 ---
 
+# Exercise 1
+Use literal and union types to model a simple traffic light system.
+
+1. Define a type alias called TrafficLightColor that allows only "red", "yellow", or "green".
+2. Create a function called getNextLight that:
+  - Takes a parameter of type TrafficLightColor
+  - Returns the next light color in the sequence
+    - red → green → yellow → red (loop)
+3. Use the function with a variable typed as TrafficLightColor.
+
+## Hints:
+- Use a literal union type: "red" | "green" | "yellow"
+- You can return a literal type too
+
+```ts
+getNextLight("red"); // "green"
+getNextLight("green"); // "yellow"
+```
+
 
 
 ---
