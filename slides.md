@@ -132,6 +132,33 @@ transition: slide-left
 transition: slide-left
 ---
 
+# Zod
+
+- see https://zod.dev
+- a TS-first schema validation with static type inference
+- can define schemas you can use to validate data
+
+```ts
+import * as z from "zod";
+ 
+const User = z.object({
+  name: z.string(),
+});
+ 
+// some untrusted data...
+const input = { /* stuff */ };
+ 
+// the parsed result is validated and type safe!
+const data = User.parse(input);
+ 
+// so you can use it with confidence :)
+console.log(data.name);
+```
+
+---
+transition: slide-left
+---
+
 # Exercise 1
 Use literal and union types to model a simple traffic light system.
 
