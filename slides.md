@@ -183,6 +183,23 @@ greet(JSON.parse('{"name":123}')); // TS thinks this is fine!
 transition: slide-left
 ---
 
+# TS vs Zod comparison chart
+
+| Feature                                     | TypeScript        | Zod               |
+| ------------------------------------------- | ----------------- | ----------------- |
+| Compile-time type checking                  | ✅                 | ✅ (via `z.infer`) |
+| Runtime type validation                     | ❌                 | ✅                 |
+| Automatic error messages                    | ❌                 | ✅                 |
+| Custom validation rules                     | 🚫 (not directly) | ✅                 |
+| Schema-based parsing                        | ❌                 | ✅                 |
+| Safer API handling (e.g. `fetch` responses) | ❌                 | ✅                 |
+| Works with JSON and external data           | ❌                 | ✅                 |
+
+
+---
+transition: slide-left
+---
+
 # Exercise 1
 Use literal and union types to model a simple traffic light system.
 
