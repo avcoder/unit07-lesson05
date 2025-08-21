@@ -39,8 +39,8 @@ transition: slide-left
 # Recap 
 
 - Lab yesterday we covered Docker
-- `docker-compose pull && docker-compose up`
-- `docker compose watch`
+- `docker compose down`
+- `docker-compose pull && docker-compose up` or `docker compose watch`
 - `docker image prune -a`
 - `docker volume rm $(docker volume ls -q)`
 - on my Mac I had to edit Dockerfile to include:
