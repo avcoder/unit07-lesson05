@@ -343,7 +343,7 @@ test('increments count when button is clicked', async () => {
 transition: slide-left
 ---
 
-# Exercises
+# Exercise
 
 - Refactor our Heading component to accept a string prop which will be shown in the `<h1>` tag
   - create a test if our Heading/Greeting Component is passed the text "Yo Earth" in the document, that it renders correctly
