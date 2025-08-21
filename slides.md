@@ -19,9 +19,9 @@ mdc: true
 # Intro to Deployment
 Unit 07 - Lesson 05
 
-- [ ] Continuous Integration / Continuous Deployment 
-- [ ] GitHub Actions Workflow
-- [ ] Deploying to Render (both FE and BE app; Express/EJS app)
+- [ ] Typescript
+- [ ] react-testing-library / vitest
+
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
