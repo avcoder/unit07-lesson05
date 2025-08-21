@@ -258,7 +258,7 @@ transition: slide-left
 # Exercise using Zod
 
 ```ts
-import { z } from "zod";
+import * as z from "zod";
 
 const UserSchema = z.object({ // 1. Define the schema
   name: z.string().min(2),
