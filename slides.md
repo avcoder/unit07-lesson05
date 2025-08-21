@@ -343,6 +343,17 @@ test('increments count when button is clicked', async () => {
 transition: slide-left
 ---
 
+# Exercises
+
+- Refactor our Heading component to accept a string prop which will be shown in the `<h1>` tag
+  - create a test if our Heading/Greeting Component is passed the text "Yo Earth" in the document, that it renders correctly
+  - Hint can use: `expect(screen.getByText` as well as `.toBeInTheDocument()`
+
+
+---
+transition: slide-left
+---
+
 # Homework
 
 - Think about your Capstone (planning phase) 
