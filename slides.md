@@ -63,6 +63,7 @@ transition: slide-left
 
 # Typescript
 
+- Benefits of JS
 - Tip#1: Always hover over your variables to see what type it is (as defined previously by TS)
 - Exercise: create new vite/react/TS project
   - Extract `<h1>` into its own component
@@ -154,6 +155,65 @@ class: text-left
 
 - 🧪 [Enter anonymous lab questions](https://docs.google.com/forms/d/e/1FAIpQLSevvGARdHQikso-uLqFCO481MABKE5HofuSrlzEPMNQ2ZLykw/viewform?usp=dialog)
 - ℹ️ [Course feedback survey](https://circuitstream.typeform.com/to/ZoyYk7px#course_id=SoftwareAN&instructor=9514)
+
+---
+transition: slide-left
+---
+
+# React Testing Library
+see https://testing-library.com/
+
+- Test 1: Does heading render correctly from child component?
+
+```tsx
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders the heading from the Heading component', () => {
+  render(<App />);
+  const heading = screen.getByRole('heading', { name: /vite \+ react/i });
+  expect(heading).toBeInTheDocument();
+});
+```
+
+---
+transition: slide-left
+---
+
+# React Testing Library
+
+- Does logo render with correct alt text
+
+```tsx
+test('renders the Vite and React logos', () => {
+  render(<App />);
+  
+  expect(screen.getByAltText(/vite logo/i)).toBeInTheDocument();
+  expect(screen.getByAltText(/react logo/i)).toBeInTheDocument();
+});
+```
+
+---
+transition: slide-left
+---
+
+# React Testing Library
+
+- Does clicking the button increase the count?
+```tsx
+import userEvent from '@testing-library/user-event';
+
+test('increments count when button is clicked', async () => {
+  render(<App />);
+  const button = screen.getByRole('button', { name: /count is 0/i });
+
+  await userEvent.click(button);
+  expect(button).toHaveTextContent('count is 1');
+
+  await userEvent.click(button);
+  expect(button).toHaveTextContent('count is 2');
+});
+```
 
 ---
 transition: slide-left
