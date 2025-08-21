@@ -132,6 +132,14 @@ transition: slide-left
 transition: slide-left
 ---
 
+# View a more complex use of TS
+
+- ChatGPT: `give a sample tsx that uses typescript in a more complex way inside a react component`
+
+---
+transition: slide-left
+---
+
 # Common Use-case: Using TS inside a .map function
 
 ```tsx
