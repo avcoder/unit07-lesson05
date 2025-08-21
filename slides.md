@@ -253,10 +253,33 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise: Use Zod
+# Exercise using Zod
 
-- refactor your first exercise to use Zod
-- experience the difference to really understand why you may want to use Zod
+```ts
+import { z } from "zod";
+
+const UserSchema = z.object({ // 1. Define the schema
+  name: z.string().min(2),
+  email: z.string().email(),
+  age: z.number().gte(18),
+});
+
+const validUser = { 
+  name: "Alice",
+  email: "alice@example.com",
+  age: 30,
+};
+
+try {
+  const user = UserSchema.parse(validUser); // 2. Use `.parse()` for a valid user
+  console.log("✅ Valid user:", user);
+} catch (e) {
+  console.error("❌ Validation error (validUser):", e);
+}
+
+type User = z.infer<typeof UserSchema>;  // 3. Infer the type
+```
+
 
 ---
 layout: image-right
@@ -343,11 +366,34 @@ test('increments count when button is clicked', async () => {
 transition: slide-left
 ---
 
-# Exercise
+# Most common screen methods
 
-- Refactor our Heading component to accept a string prop which will be shown in the `<h1>` tag
-  - create a test if our Heading/Greeting Component is passed the text "Yo Earth" in the document, that it renders correctly
-  - Hint can use: `expect(screen.getByText` as well as `.toBeInTheDocument()`
+| Method                   | Purpose                                                              |
+| ------------------------ | -------------------------------------------------------------------- |
+| `getByText()`            | Find an element with exact visible text                              |
+| `getByLabelText()`       | Match by `<label>` text (good for form inputs)                       |
+| `getByPlaceholderText()` | Match inputs by their placeholder                                    |
+| `getByAltText()`         | Match images or media by `alt` text                                  |
+| `getByTestId()`          | Match by `data-testid` attribute (fallback, not preferred)           |
+| `queryBy...`             | Same as `getBy`, but returns `null` instead of throwing if not found |
+| `findBy...`              | For async elements (returns a Promise, waits for element to appear)  |
+| `getAllBy...`            | Returns all matching elements (array), throws if none found          |
+
+---
+transition: slide-left
+---
+
+# Most common assertions
+
+| Matcher                            | Checks...                            |
+| ---------------------------------- | ------------------------------------ |
+| `toBeInTheDocument()`              | Element is present in the DOM        |
+| `toBeVisible()`                    | Element is visible                   |
+| `toHaveTextContent()`              | Matches element's text content       |
+| `toHaveAttribute()`                | Checks if an attribute exists/equals |
+| `toHaveValue()`                    | Checks input/select/textarea value   |
+| `toBeDisabled()` / `toBeEnabled()` | Form elements' interactivity         |
+| `toHaveClass()`                    | Checks class names                   |
 
 
 ---
