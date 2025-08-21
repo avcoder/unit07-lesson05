@@ -133,10 +133,12 @@ transition: slide-left
 ---
 
 # Zod
+see https://zod.dev
 
-- see https://zod.dev
-- a TS-first schema validation with static type inference
-- can define schemas you can use to validate data
+- a TS-first schema validation with static type inference 
+- works on runtime (TS works at compile time only)
+- use to: validate API inputs or responses, reading JSON or user input, etc.
+- TS = spell checker while writing; Zod = proofreader catching real mistakes in the essay
 
 ```ts
 import * as z from "zod";
@@ -153,6 +155,28 @@ const data = User.parse(input);
  
 // so you can use it with confidence :)
 console.log(data.name);
+```
+
+---
+transition: slide-left
+---
+
+# Why TypeScript alone isn't enough
+
+- TypeScript is great for development-time type checking. It ensures that your code should be correct — but it doesn’t exist at runtime. Once compiled to JavaScript, all types are erased.
+- So if you get data from:
+  - an API request (incoming JSON)
+  - user input
+  - environment variables
+  - or any untyped source
+- TypeScript won’t verify that data. You need runtime validation for that — and that's where Zod comes in.
+
+```ts
+function greet(user: { name: string }) {
+  console.log("Hello " + user.name);
+}
+
+greet(JSON.parse('{"name":123}')); // TS thinks this is fine!
 ```
 
 ---
