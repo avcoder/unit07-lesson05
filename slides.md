@@ -218,7 +218,14 @@ transition: slide-left
 | Safer API handling (e.g. `fetch` responses) | ❌                 | ✅                 |
 | Works with JSON and external data           | ❌                 | ✅                 |
 
+---
+transition: slide-left
+---
 
+# Exercise: Use Zod
+
+- refactor your first exercise to use Zod
+- experience the difference to really understand why you may want to use Zod
 
 ---
 layout: image-right
