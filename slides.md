@@ -132,7 +132,38 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise 1
+# Common Use-case: Using TS inside a .map function
+
+```tsx
+type User = { id: number; name: string;};
+
+type UserSummary = { displayName: string; };
+
+type UserListProps = { users: User[]; };
+
+const UserList: React.FC<UserListProps> = ({ users }) => {
+  const userSummaries: UserSummary[] = users.map((user): UserSummary => {
+    return {
+      displayName: `User: ${user.name}`
+    };
+  });
+
+  return (
+    <ul>
+      {userSummaries.map((summary, index) => (
+        <li key={index}>{summary.displayName}</li>
+      ))}
+    </ul>
+  );
+};
+export default UserList;
+```
+
+---
+transition: slide-left
+---
+
+# Exercise 
 Use literal and union types to model a simple traffic light system.
 
 1. Define a type alias called TrafficLightColor that allows only "red", "yellow", or "green".
