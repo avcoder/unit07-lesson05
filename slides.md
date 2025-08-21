@@ -175,7 +175,9 @@ transition: slide-left
 
 - Git clone https://github.com/avcoder/ts-exercise-01
 - Transform the entire thing to TS
+  - Look for TS errors in VS Code in lower right corner
 - Stretch goals:
+  - Create a `FilterType` that has a union of 'all', 'complete', 'incomplete'
   - Extract into components: 
     - TaskItem
     - TaskList
@@ -185,7 +187,7 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise 1
+# Exercise 
 Use literal and union types to model a simple traffic light system.
 
 1. Define a type alias called TrafficLightColor that allows only "red", "yellow", or "green".
@@ -425,4 +427,4 @@ transition: slide-left
 
 # Homework
 
-- Think about your Capstone (planning phase) 
+- Think about your Capstone [planning phase)](https://courses.circuitstream.com/d2l/lms/dropbox/user/folder_submit_files.d2l?db=3496&grpid=0&isprv=0&bp=0&ou=9514)
