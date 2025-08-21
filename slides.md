@@ -171,6 +171,20 @@ export default UserList;
 transition: slide-left
 ---
 
+# Exercise
+
+- Git clone https://github.com/avcoder/ts-exercise-01
+- Transform the entire thing to TS
+- Stretch goals:
+  - Extract into components: 
+    - TaskItem
+    - TaskList
+
+
+---
+transition: slide-left
+---
+
 # Exercise 1
 Use literal and union types to model a simple traffic light system.
 
@@ -190,18 +204,6 @@ getNextLight("red"); // "green"
 getNextLight("green"); // "yellow"
 ```
 
----
-transition: slide-left
----
-
-# Exercise
-
-- Git clone https://github.com/avcoder/ts-exercise-01
-- Transform the entire thing to TS
-- Stretch goals:
-  - Extract into components: 
-    - TaskItem
-    - TaskList
 
 ---
 transition: slide-left
