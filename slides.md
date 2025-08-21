@@ -45,7 +45,7 @@ transition: slide-left
 ---
 layout: image-right
 transition: slide-left
-image: /assets/addy.png
+image: /assets/matt.png
 backgroundSize: 400px 300px
 class: text-left
 ---
@@ -53,7 +53,9 @@ class: text-left
 # 10 minute break
 
 🍦 Cool Tips, Trends and Resources:
-- 👩‍💻 [NeetCode](https://www.freecodecamp.org/news/prepare-for-technical-interviews-using-neetcode-150)
+- ⌨️ [Total Typescript](https://www.totaltypescript.com/)
+- 💯 [react testing library](https://testing-library.com/docs/react-testing-library/intro/)
+- 🛹 [Scrimba: Learn TS](https://scrimba.com/learn-typescript-c0l)
 
 <br>
 <hr>
@@ -68,5 +70,4 @@ transition: slide-left
 
 # Homework
 
-- Work on your "Algorithm and Structural Foundations" assignment due July 20 midnight EST
-   - can submit before due date if you wish
+- Think about your Capstone (planning phase) 
