@@ -30,6 +30,11 @@ jobs:
       - name: Build the site
         run: npm run build
 
+      - name: Show file structure after building
+        run: |
+        echo "ls -R dist"
+        ls -R dist
+
     # Step 5: Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
