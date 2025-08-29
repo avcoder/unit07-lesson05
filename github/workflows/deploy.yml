@@ -1,0 +1,43 @@
+name: Deploy React frontend to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+ deploy:
+    runs-on: ubuntu-latest # Other options: ubuntu-22.04, windows-latest, windows-2022, macos-latest etc.
+    permissions:
+      contents: write
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: set up latest node env
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "node"
+
+      # Step 3: Install dependencies
+      - name: Install Deps
+        run: npm ci # Clean Install: requires package-lock.json, deletes node_modules, faster than npm i
+
+      # Step 4: Build project
+      - name: Build the site
+        run: npm run build
+
+      - name: Show file structure after building
+        run: |
+        echo "ls -R dist"
+        ls -R dist
+
+    # Step 5: Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Context vars
+          publish_dir: ./dist # root directory that has index.html/css/js files, OR /dist
